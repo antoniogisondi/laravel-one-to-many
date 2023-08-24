@@ -27,11 +27,10 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Project $project)
     {
         $types = Type::all();
-        dd($types->name);
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('project', 'types'));
     }
 
     /**
@@ -76,7 +75,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
