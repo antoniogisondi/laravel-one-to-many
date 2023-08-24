@@ -10,13 +10,12 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titolo','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
+    protected $fillable = ['type_id','titolo','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
         /**
          * Get the user associated with the Project
          *
-         * @return \Illuminate\Database\Eloquent\Relations\HasOne
          */
-        public function types(): HasOne
+        public function type()
         {
             return $this->belongsTo(Type::class);
         }

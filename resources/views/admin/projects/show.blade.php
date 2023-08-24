@@ -19,6 +19,7 @@
 
                         <div class="list">
                             <ul>
+                                <li><strong>Tipo progetto:</strong> {{$project->type->name}}</li>
                                 <li><strong>Inizio progetto:</strong> {{ $project->inizio_progetto}}</li>
                                 <li><strong>Consegna progetto:</strong> {{ $project->consegna_progetto}}</li>
                                 <li><strong>Feedback progetto: </strong>

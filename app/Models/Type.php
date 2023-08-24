@@ -14,10 +14,10 @@ class Type extends Model
     /**
      * Get all of the comments for the Type
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function projects(): HasMany
+    public function projects()
     {
         return $this->hasMany(Project::class);
+
     }
 }

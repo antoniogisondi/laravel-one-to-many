@@ -38,7 +38,7 @@
                                 <select name="type_id" id="type_id" class="form-control">
                                     <option value="" selected>Seleziona il tipo di progetto</option>
                                     @foreach ($types as $type)
-                                        <option value="">{{ $type->name }}</option>
+                                        <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

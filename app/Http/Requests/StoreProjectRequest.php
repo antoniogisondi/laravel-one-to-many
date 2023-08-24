@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'descrizione'       => 'required|max:255',
             'inizio_progetto'   => 'required|date_format:Y-m-d',
             'consegna_progetto' => 'required|date_format:Y-m-d',
-            'img'               => 'image|max:250'
+            'img'               => 'image|max:250',
+            'type_id'           => 'required|exists:types,id'
         ];
     }
 
@@ -43,7 +44,9 @@ class StoreProjectRequest extends FormRequest
             'consegna_progetto.required'    => 'Il campo dell\' inizio del progetto deve essere compilato',
             'consegna_progetto.date_format' => 'Il formato della data deve essere nell\' ordine anno-mese-giorno',
             'img.image'                     => 'Il formato dell\' immagine dev\'essere di tipo jpg, jpeg, webp, png',
-            'img|max'                       => 'L\' immagine deve essere lunga al massimo :max caratteri'
+            'img|max'                       => 'L\' immagine deve essere lunga al massimo :max caratteri',
+            'type_id.required'              => 'Selezionare una tipologia di progetto',
+            'type_id.exists'                => 'La tipologia selezionata non è esistente'
         ];
     }
 }
