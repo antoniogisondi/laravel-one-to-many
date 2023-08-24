@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card mt-4">
+                <div class="card mt-4 mb-5">
                     <div class="card-header">
                         <div class="card-title d-flex justify-content-between">
                             <h3>My Projects</h3>
