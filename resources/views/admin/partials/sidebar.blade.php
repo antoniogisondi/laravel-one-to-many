@@ -1,3 +1,4 @@
+
 <nav id="sidebar" class="custom-color-sidebar d-flex flex-column align-items-center">
     <div class="sidebar-header mt-4">
          <span class="size-font-sidebar"><span class="mt-4">Pannello di Controllo:</span></span>

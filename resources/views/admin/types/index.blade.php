@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+<div class="container-fluid d-flex flex-row p-0">
+    @include('admin.partials.sidebar')
+    <div class="container mx-3">
         <div class="row">
             <div class="col">
                 <div class="card mt-4 mb-5">
@@ -47,4 +49,5 @@
         </div>
     </div>
     @include('admin.partials.modal_delete')
+</div>
 @endsection

@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm d-flex justify-content-center">
-            <div class="container m-0 p-0">
+            <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel d-flex justify-content-center">
                         <img src="{{ Vite::asset('resources/images/logodashb.png')}}" alt="">
@@ -44,7 +44,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto mx-5">
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
@@ -79,12 +79,9 @@
                 </div>
             </div>
         </nav>
-        <div class="d-flex flex-row">
-            @include('admin.partials.sidebar')
-            <main>
-                @yield('content')
-            </main>
-        </div>
+        <main>
+            @yield('content')
+        </main>
     </div>
 </body>
 
