@@ -6,7 +6,12 @@
             <div class="col-12">
                 <div class="card mt-5">
                     <div class="card-header image-container">
-                        <img src="{{ asset('storage/'.$project->img)}}">
+                        @if ($project->img)
+                            <img src="{{ asset('storage/'.$project->img)}}"> 
+                        @else
+                            <p>Immagine non specificata</p>
+                        @endif
+                        
                         <h3>{{ $project->titolo }}</h3>
                     </div>
 
@@ -19,7 +24,12 @@
 
                         <div class="list">
                             <ul>
-                                <li><strong>Tipo progetto:</strong> {{$project->type->name}}</li>
+                                @if ($project->type->name)
+                                    <li><strong>Tipo progetto:</strong> {{$project->type->name}}</li>
+                                @else
+                                    <li><strong>Tipo progetto:</strong>Non specificato</li>
+                                @endif
+                                
                                 <li><strong>Inizio progetto:</strong> {{ $project->inizio_progetto}}</li>
                                 <li><strong>Consegna progetto:</strong> {{ $project->consegna_progetto}}</li>
                                 <li><strong>Feedback progetto: </strong>

@@ -32,7 +32,11 @@
                             </div>
                             <div class="mb-3">
                                 <div class="image-container">
-                                    <img src="{{ asset('storage/'.$project->img)}}">
+                                    @if ($project->img)
+                                        <img src="{{ asset('storage/'.$project->img)}}">
+                                    @else
+                                        <p>Immagine non specificata</p>
+                                    @endif
                                 </div>
                                 <label for="img" class="form-label">Inserisci immagine</label>
                                 <input type="file" class="form-control" id="img" name="img">
