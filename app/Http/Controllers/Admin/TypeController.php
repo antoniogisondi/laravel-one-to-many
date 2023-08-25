@@ -38,7 +38,14 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $datas = $request->all();
+        
+        $type = new Type();
+
+        $type->fill($datas);
+        $type->save();
+
+        return redirect()->route('admin.types.show', $type->id);
     }
 
     /**
@@ -49,7 +56,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        return view('admin.types.create', compact('type'));
+        return view('admin.types.show', compact('type'));
     }
 
     /**
@@ -60,7 +67,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        return view('admin.types.create');
+        return view('admin.types.edit');
     }
 
     /**
