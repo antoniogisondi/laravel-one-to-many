@@ -22,10 +22,8 @@
 
 <body>
     <div id="app">
-
-
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm d-flex justify-content-center">
+            <div class="container m-0 p-0">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel d-flex justify-content-center">
                         <img src="{{ Vite::asset('resources/images/logodashb.png')}}" alt="">
@@ -67,7 +65,7 @@
                                 <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -81,10 +79,12 @@
                 </div>
             </div>
         </nav>
-
-        <main>
-            @yield('content')
-        </main>
+        <div class="d-flex flex-row">
+            @include('admin.partials.sidebar')
+            <main>
+                @yield('content')
+            </main>
+        </div>
     </div>
 </body>
 
